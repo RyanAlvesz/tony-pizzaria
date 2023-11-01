@@ -65,6 +65,7 @@ main{
     flex-direction: column;
     gap: 6px;
     color: var(--branco);
+    width: 100%;
 }
 
 .food-option h2{
@@ -74,12 +75,11 @@ main{
 }
 
 .container-categorias{
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
     gap: 24px;
-    flex-grow: 1;
-    /* align-items: center;
+    width: 90vw;
     overflow-x: scroll;
-    width: 90vw; */
 }
 
 .container-categorias::-webkit-scrollbar{
@@ -103,6 +103,10 @@ footer{
     padding: 12px 20px;
     align-items: center;
     color: var(--branco);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 .option{
