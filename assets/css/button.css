@@ -1,0 +1,18 @@
+.botao{
+    width: 90%;
+    padding-block: 16px;
+    background-color: var(--branco);
+    border-radius: 8px;
+    color: var(--laranja);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.botao-verde{
+    background-color: var(--verde);
+}
+
+.botao-vermelho{
+    background-color: var(--vermelho);
+}

@@ -1,0 +1,18 @@
+body{
+    background-image: url(../img/background.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+body::after{
+    content: '';
+    display: block;
+    position: fixed;
+    background: var(--gradiente-laranja);
+    inset: 0;
+    margin: auto;
+    pointer-events: none;
+    z-index: -1;
+}
