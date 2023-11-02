@@ -8,14 +8,12 @@ const verificarLogin = () => {
     let senha = document.getElementById('senha').value
 
     if(email && senha){
-        if(email == "teste@email.com" && senha == "123"){
+        if(email == "celso@senai.com" && senha == "java"){
             window.location.href = "./home.html"
         }
         else
         alert('Email e/ou senha incorreto(s)')
     }
-
-    return false
     
 }
 
