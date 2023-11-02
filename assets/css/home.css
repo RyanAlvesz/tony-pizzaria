@@ -54,10 +54,10 @@ header .input{
 }
 
 main{
-    display: grid;
-    grid-template-rows: 1fr 2fr 2fr 2.5fr;
-    gap: 12px;
-    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0 0 1.5rem 1.25rem;
 }
 
 .food-option{
@@ -75,15 +75,12 @@ main{
 }
 
 .container-categorias{
-    display: grid;
-    grid-auto-flow: column;
-    gap: 24px;
+    display: flex;
+    gap: 1rem;
     width: 90vw;
-    overflow-x: scroll;
-}
-
-.container-categorias::-webkit-scrollbar{
-    display: none;
+    overflow: scroll;
+    padding-bottom: 0.375rem;
+    border-radius: 6px;
 }
 
 .categoria{
@@ -95,6 +92,158 @@ main{
     justify-content: center;
     border-radius: 4px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+    transition: 0.8s;
+}
+
+.categoria:hover{
+    background-color: var(--vermelho-hover);
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);
+}
+
+.categoria img{
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: 1.2s;
+}
+
+.categoria:hover img{
+    width: 1.70rem;
+    height: 1.70rem;
+}
+
+.container-pizzas{
+    display: grid;
+    grid-auto-flow: column;
+    gap: 0.75rem;
+    width: 90vw;
+    overflow-x: scroll;
+    padding-bottom: 0.375rem;
+}
+
+.pizza-favorita{
+    width: 150px;
+    height: 100px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+    max-width: 9.375rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-grow: 1;
+}
+
+.pizza-favorita a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    text-align: start;
+    gap: 0.375rem;
+    font-weight: 700;
+    font-size: 0.75rem;
+    color: var(--branco);
+}
+
+.preco{
+    background-color: var(--vermelho);
+    border-radius: 16px;
+    width: fit-content;
+    height: fit-content;
+    padding: 0.25rem 0.375rem;
+    margin-left: 0.4rem;
+}
+
+.nome-pizza{    
+    width: 80%;
+    padding: 0.25rem 0.4rem;
+    background-color: rgba(0, 0, 0, 0.55);
+    font-size: 0.75rem;
+}
+
+#pizza-1{
+    background-image: url(../img/pizza-1.webp);
+}
+
+#pizza-2{
+    background-image: url(../img/pizza-2.webp);
+}
+
+#pizza-3{
+    background-image: url(../img/pizza-3.webp);
+}
+
+#pizza-4{
+    background-image: url(../img/pizza-4.webp);
+}
+
+#pizza-5{
+    background-image: url(../img/pizza-5.webp);
+}
+
+.nome-pizza-recomendada{
+    font-weight: 400;
+    text-shadow: 1px 1px 1px #000;
+    background-color: transparent;
+    width: 100%;
+    padding: 1rem 0.4rem 1.2rem 0.4rem;
+}
+
+.container-bebidas{
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.bebida{
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+    background-color: var(--branco);
+    width: 90vw;
+}
+
+.bebida a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding: 0.75rem;
+    color: var(--branco);
+}
+
+.produto{
+    display: flex;
+    align-items: center;
+}
+
+.produto img{
+    height: 58px;
+}
+
+.bebida-info{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    color: #000;
+    gap: 0.375rem;
+}
+
+.nome-bebida{
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+
+.descricao-bebida{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    color: rgba(0, 0, 0, 0.50);
+    gap: 0.1rem;
+}
+
+.descricao-bebida li{
+    font-size: 0.75rem;
 }
 
 footer{
@@ -102,23 +251,25 @@ footer{
     display: flex;
     padding: 12px 20px;
     align-items: center;
-    color: var(--branco);
-    position: fixed;
+    justify-content: space-around;
+    position: sticky;
     bottom: 0;
     left: 0;
     right: 0;
 }
 
-.option{
+.option a{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 6px;
-    flex-grow: 1;
+    color: var(--branco);
 }
 
-.option img{
-    width: 16px;
-    height: 16px;
+.option a img{
+    width: 1.125rem;
+    height: 1.125rem;
 }
+
+

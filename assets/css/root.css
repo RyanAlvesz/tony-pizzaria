@@ -3,6 +3,7 @@
     --branco: #ffffff;
     --verde: #199570;
     --vermelho: #F93030;
+    --vermelho-hover: #fc3838;
     --gradiente-laranja: linear-gradient(180deg, rgba(252,121,0,0.85) 35%, rgba(252,121,0,0) 100%);
     --fonte-principal: 'Roboto', sans-serif;
 }

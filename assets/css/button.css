@@ -9,6 +9,12 @@
     font-size: 1.25rem;
 }
 
+.botao a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
 .botao-verde{
     background-color: var(--verde);
 }
