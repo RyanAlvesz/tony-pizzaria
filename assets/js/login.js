@@ -7,14 +7,14 @@ const verificarLogin = () => {
     let email = document.getElementById('email').value
     let senha = document.getElementById('senha').value
 
-    let validacaoEmail = sessionStorage.getItem('email') 
-    let validacaoSenha = sessionStorage.getItem('senha')
+    let validacaoEmail = localStorage.getItem('email') 
+    let validacaoSenha = localStorage.getItem('senha')
 
     if(!validacaoEmail && !validacaoSenha){
         validacaoEmail = 'celso@senai.com'
         validacaoSenha = 'java'
-        sessionStorage.setItem('email', validacaoEmail)
-        sessionStorage.setItem('senha', validacaoSenha)
+        localStorage.setItem('email', validacaoEmail)
+        localStorage.setItem('senha', validacaoSenha)
     }
     
     if(email && senha){

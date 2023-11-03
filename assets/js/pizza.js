@@ -1,8 +1,8 @@
 'use strict'
 
-const imagemPizza = sessionStorage.getItem('imagemPizza')
-const nomePizza = sessionStorage.getItem('nomePizza')
-const precoPizza = sessionStorage.getItem('precoPizza')
+const imagemPizza = localStorage.getItem('imagemPizza')
+const nomePizza = localStorage.getItem('nomePizza')
+const precoPizza = localStorage.getItem('precoPizza')
 const like = document.getElementById('like')
 
 const criarImagem = () => {
@@ -34,4 +34,6 @@ const darLike = () => {
 
 like.addEventListener('click', darLike)
 
-criarImagem()
+window.onload(
+    criarImagem()
+)

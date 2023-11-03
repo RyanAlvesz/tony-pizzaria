@@ -1,9 +1,9 @@
 'use strict'
 
-const imagem = sessionStorage.getItem('imagem')
-const nome = sessionStorage.getItem('nome')
-const emailCadastrado = sessionStorage.getItem('email')
-const telefoneCadastrado = sessionStorage.getItem('telephone')
+const imagem = localStorage.getItem('imagem')
+const nome = localStorage.getItem('nome')
+const emailCadastrado = localStorage.getItem('email')
+const telefoneCadastrado = localStorage.getItem('telephone')
 const icon = document.getElementById('imagem-usuario')
 const email = document.getElementById('email')
 const telefone = document.getElementById('telefone')
@@ -35,8 +35,8 @@ input.addEventListener('change', () => {
     
         reader.addEventListener('load', (e) => {
             const readerTarget = e.target
-            sessionStorage.setItem('imagem', readerTarget.result)
-            icon.style.backgroundImage = `url(${sessionStorage.getItem('imagem')})`
+            localStorage.setItem('imagem', readerTarget.result)
+            icon.style.backgroundImage = `url(${localStorage.getItem('imagem')})`
         })
     
     reader.readAsDataURL(file);
@@ -47,7 +47,9 @@ input.addEventListener('change', () => {
 
 botaoSair.addEventListener('click', () => {
     window.location.href = './login.html'
-    sessionStorage.clear()
+    localStorage.clear()
 })
 
-montarPerfil()
+window.onload(
+    montarPerfil()
+)

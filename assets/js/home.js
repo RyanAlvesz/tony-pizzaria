@@ -8,9 +8,9 @@ const selecionarPizza = () => {
 
         pizza.addEventListener('click', () => {
 
-            sessionStorage.setItem('imagemPizza', pizza.classList[1])
-            sessionStorage.setItem('nomePizza', pizza.children[0].children[1].textContent)
-            sessionStorage.setItem('precoPizza', pizza.children[0].children[0].textContent)
+            localStorage.setItem('imagemPizza', pizza.classList[1])
+            localStorage.setItem('nomePizza', pizza.children[0].children[1].textContent)
+            localStorage.setItem('precoPizza', pizza.children[0].children[0].textContent)
 
         })
 
@@ -20,8 +20,8 @@ const selecionarPizza = () => {
 
 const montarUsuario = () => {
 
-    let nomeUsuario = sessionStorage.getItem('nome')
-    let imagem = sessionStorage.getItem('imagem')
+    let nomeUsuario = localStorage.getItem('nome')
+    let imagem = localStorage.getItem('imagem')
 
     const foto = document.getElementById('foto-usuario')
     const nome = document.getElementById('nome-usuario')
@@ -29,8 +29,8 @@ const montarUsuario = () => {
     if(!nomeUsuario && !imagem){
         nomeUsuario = 'Celso'
         imagem = '../img/celso.webp'
-        sessionStorage.setItem('nome', nomeUsuario)
-        sessionStorage.setItem('imagem', imagem)
+        localStorage.setItem('nome', nomeUsuario)
+        localStorage.setItem('imagem', imagem)
     }
 
     foto.src = imagem
@@ -47,5 +47,7 @@ bebidas.addEventListener('click', () => {
 
 })
 
-montarUsuario()
-selecionarPizza()
+window.onload(
+    montarUsuario()
+    selecionarPizza()
+)

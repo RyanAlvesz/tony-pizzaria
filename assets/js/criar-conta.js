@@ -15,10 +15,10 @@ botao.addEventListener('click', () => {
         
         if(password.value == passwordConfirmation.value){
             
-            sessionStorage.setItem('nome', nome.value)
-            sessionStorage.setItem('email', email.value)
-            sessionStorage.setItem('senha', password.value)
-            sessionStorage.setItem('telephone', telephone.value)
+            localStorage.setItem('nome', nome.value)
+            localStorage.setItem('email', email.value)
+            localStorage.setItem('senha', password.value)
+            localStorage.setItem('telephone', telephone.value)
             
             nome.value = ''
             email.value = ''
@@ -47,8 +47,8 @@ input.addEventListener('change', () => {
         reader.addEventListener('load', (e) => {
             const readerTarget = e.target
             const imagem = document.getElementById('imagem-usuario')
-            sessionStorage.setItem('imagem', readerTarget.result)
-            imagem.style.backgroundImage = `url(${sessionStorage.getItem('imagem')})`
+            localStorage.setItem('imagem', readerTarget.result)
+            imagem.style.backgroundImage = `url(${localStorage.getItem('imagem')})`
             imagem.removeChild(imagem.children[0])
         })
     
