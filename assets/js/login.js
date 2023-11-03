@@ -1,6 +1,7 @@
 'use strict'
 
 const botaoLogin = document.getElementById('botao')
+const login = localStorage.getItem('login')
 
 const verificarLogin = () => {
 
@@ -9,7 +10,7 @@ const verificarLogin = () => {
 
     let validacaoEmail = localStorage.getItem('email') 
     let validacaoSenha = localStorage.getItem('senha')
-
+    
     if(!validacaoEmail && !validacaoSenha){
         validacaoEmail = 'celso@senai.com'
         validacaoSenha = 'java'
@@ -19,6 +20,7 @@ const verificarLogin = () => {
     
     if(email && senha){
         if(email == validacaoEmail && senha == validacaoSenha){
+            localStorage.setItem('login', 'true')
             window.location.href = './home.html'
         }
         else
@@ -28,3 +30,14 @@ const verificarLogin = () => {
 }
 
 botaoLogin.addEventListener('click', verificarLogin)
+
+window.addEventListener('load', () => {
+
+    if(login == 'true'){
+
+        console.log('opa')
+        window.location.href = './home.html'
+
+    }
+
+})

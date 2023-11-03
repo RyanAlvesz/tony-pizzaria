@@ -20,6 +20,10 @@ botao.addEventListener('click', () => {
             localStorage.setItem('senha', password.value)
             localStorage.setItem('telephone', telephone.value)
             
+            if(!localStorage.getItem('imagem')){
+                localStorage.setItem('imagem', '../img/icons/User.svg')
+            }
+
             nome.value = ''
             email.value = ''
             telephone.value = ''

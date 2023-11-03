@@ -23,24 +23,15 @@ header{
     width: fit-content;
 }   
 
-main::after{
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: 0;
-    background-color: var(--branco);
-    width: 100%;
-    height: calc(100vh - 10vh - 1rem - 15vh - 0.75rem);
-    border-radius: 2rem 2rem 0 0;
-    z-index: -1;
-}
-
 main{
     position: relative;
     z-index: 1;
     display: flex;
     justify-content: center;
     padding: 0.5rem 1.5rem 2rem 1.5rem;
+    border-radius: 2rem 2rem 0 0;
+    background-color: var(--branco);
+    margin-top: calc(15vh + 1.5rem);
 }
 
 main form{
@@ -64,7 +55,8 @@ main form{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    margin-bottom: 1rem;
+    transform: translateY(calc(-100% - 1.5rem));
+    margin-bottom: calc(-15vh - 1rem);
 }
 
 #imagem-usuario img{
