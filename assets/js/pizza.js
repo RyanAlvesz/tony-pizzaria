@@ -33,7 +33,4 @@ const darLike = () => {
 }
 
 like.addEventListener('click', darLike)
-
-window.onload(
-    criarImagem()
-)
+window.addEventListener('load', criarImagem)

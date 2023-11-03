@@ -47,7 +47,5 @@ bebidas.addEventListener('click', () => {
 
 })
 
-window.onload(
-    montarUsuario()
-    selecionarPizza()
-)
+window.addEventListener('load', montarUsuario)
+window.addEventListener('load', selecionarPizza)

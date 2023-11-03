@@ -50,6 +50,4 @@ botaoSair.addEventListener('click', () => {
     localStorage.clear()
 })
 
-window.onload(
-    montarPerfil()
-)
+window.addEventListener('load', montarPerfil)
