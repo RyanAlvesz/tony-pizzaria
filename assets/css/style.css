@@ -7,6 +7,7 @@ body{
 
 header img{
     height: 15vh;
+    max-width: 80vw;
 }
 
 main{

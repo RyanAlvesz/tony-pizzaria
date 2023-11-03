@@ -7,9 +7,19 @@ const verificarLogin = () => {
     let email = document.getElementById('email').value
     let senha = document.getElementById('senha').value
 
+    let validacaoEmail = sessionStorage.getItem('email') 
+    let validacaoSenha = sessionStorage.getItem('senha')
+
+    if(!validacaoEmail && !validacaoSenha){
+        validacaoEmail = 'celso@senai.com'
+        validacaoSenha = 'java'
+        sessionStorage.setItem('email', validacaoEmail)
+        sessionStorage.setItem('senha', validacaoSenha)
+    }
+    
     if(email && senha){
-        if(email == "celso@senai.com" && senha == "java"){
-            window.location.href = "./home.html"
+        if(email == validacaoEmail && senha == validacaoSenha){
+            window.location.href = './home.html'
         }
         else
         alert('Email e/ou senha incorreto(s)')

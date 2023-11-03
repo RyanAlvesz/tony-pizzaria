@@ -6,6 +6,7 @@ body{
 }
 
 header img{
+    max-width: 80vw;
     height: 15vh;
 }
 
@@ -71,7 +72,7 @@ main form{
 
 form button{
     place-self: center center;
-    width: 100%;
+    width: 100% !important;
 }
 
 form span{
