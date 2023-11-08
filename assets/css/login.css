@@ -99,3 +99,60 @@ footer a{
     font-size: 1.25rem;
     text-shadow: 2px 2px 2px #000;
 }
+
+@media (min-width: 1200px) {
+    
+    body{
+        grid-template-rows: auto 1fr auto;
+        padding: 3rem 0 3rem 0;
+    }
+
+    header, main, footer{
+        width: 45vw;
+        padding: 0 9vw;
+    }
+
+    header{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    main{
+        height: 100%;
+    }
+    
+    .text{
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .text h1{
+        font-size: 2.25rem;
+        width: 100%;
+    }
+    
+    .text p{
+        font-size: 1.25rem;
+    }
+    
+    .input img{
+        width: 2rem;
+        height: 2rem;
+    }
+
+    form button{
+        padding-block: 1rem !important;
+        font-size: 1.5rem !important;
+    }
+    
+    footer span{
+        font-size: 1rem;
+    }
+    
+    footer a{
+        font-size: 1.5rem;
+    }
+
+}

@@ -18,3 +18,25 @@ body::after{
     pointer-events: none;
     z-index: -1;
 }
+
+@media (min-width: 1200px) {
+    
+    body{
+        padding: 0 0 0 55%;
+        background-size: contain;
+        background-position: left;
+        background-image: var(--gradiente-laranja-desktop);
+        place-items: center right;
+    }
+
+    body::after{
+        background-image: url(../img/background-desktop.webp);
+        background-size: cover;
+        width: 55%;
+        inset: auto;
+        left: 0;
+        top: 0;
+        bottom: 0;
+    }
+
+}

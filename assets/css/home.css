@@ -154,7 +154,6 @@ main{
     height: 6.25rem;
     border-radius: 0.5rem;
     box-shadow: 0.125rem 0.125rem 0.125rem rgba(0, 0, 0, 0.25);
-    max-width: 9.375rem;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -165,6 +164,10 @@ main{
 
 .pizza-favorita:hover{
     transform: scale(1.02) rotate(-2deg);
+}
+
+.pizza-favorita:hover .nome-pizza{
+    border-radius: 0;
 }
 
 .pizza-favorita:hover .nome-pizza{
@@ -191,7 +194,6 @@ main{
     height: fit-content;
     padding: 0.25rem 0.375rem;
     margin-left: 0.4rem;
-    transition: ease-in-out 0.5s;
 }
 
 .nome-pizza{    
@@ -200,6 +202,7 @@ main{
     background-color: rgba(0, 0, 0, 0.55);
     font-size: 0.75rem;
     transition: ease-out 0.7s;
+    border-radius: 0 8px;
 }
 
 .pizza-1{
@@ -324,4 +327,157 @@ footer{
 .option a img{
     width: 1.125rem;
     height: 1.125rem;
+}
+
+@media (min-width: 1200px) {
+    
+    body{
+        padding: 0;
+        background: var(--gradiente-laranja);
+        place-items: center start;
+    }
+
+    body::after{
+        display: none;
+    }
+
+    header, main, footer{
+        width: 100% ;
+    }
+
+    header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5625rem 2.75rem;
+    }
+    
+    .container-info-pessoal{
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .saudacao{
+        order: 2;
+        justify-content: center;
+        gap: 0.375rem;
+    }
+    
+    .saudacao h3{
+        font-size: 1.7rem;
+    }
+    
+    .saudacao span{
+        font-size: 1.3rem;
+    }
+    
+    .container-info-pessoal button{
+        width: 4.5rem;
+        height: 4.5rem;
+    }
+    
+    header .input{
+        padding: 0.75rem;
+        width: 40vw;
+        height: fit-content;
+    }
+    
+    main{
+        display: grid;
+        grid-template-areas: 
+        "g1 g1"
+        "g2 g3"
+        "g4 g4";
+        gap: 1.5rem 2.5rem;
+        place-self: center center;
+        padding-bottom: 1.5rem;
+        padding: 1.5rem 2.75rem;
+    }
+    
+    .food-option:nth-child(1){
+        grid-area: g1;
+    }
+
+    .food-option:nth-child(2){
+        grid-area: g2;
+    }
+
+    .food-option:nth-child(3){
+        grid-area: g3;
+    }
+
+    .food-option:nth-child(4){
+        grid-area: g4;
+    }
+
+    .food-option{
+        gap: 0.75rem;
+    }
+    
+    .food-option h2{
+        font-size: 1.25rem;
+    }
+    
+    .container-categorias{
+        gap: 0.5rem;
+        width: 100%;
+    }
+    
+    .container-pizzas{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 100%;
+        padding: 0.375rem 0;
+    }
+    
+    .pizza-favorita{
+        width: 100%;
+        height: 8rem;
+    }   
+    
+    .preco{
+        font-size: 0.8rem;
+    }
+    
+    .nome-pizza{    
+        width: 100%;
+        font-size: 1rem;
+        padding: 0.375rem 0.5rem;
+        border-radius: 0;
+    }
+   
+    .container-bebidas{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+    }
+    
+    .bebida{
+        width: 100%;
+    }
+    
+    .produto img{
+        height: 3.875rem;
+        width: 3.875rem;
+    }
+    
+    .nome-bebida{
+        font-size: 1rem;
+    }
+    
+    .descricao-bebida li{
+        font-size: 0.9rem;
+    }
+    
+    footer{
+        gap: 1.5rem;
+        justify-content: end;
+    }
+    
+    .option a img{
+        width: 2rem;
+        height: 2rem;
+    }
+
 }

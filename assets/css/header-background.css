@@ -14,3 +14,18 @@ body::after{
     pointer-events: none;
     z-index: -1;
 }
+
+@media (min-width: 1200px) {
+    
+    body{
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    body::after{
+        background: var(--laranja);
+        opacity: 0.5;
+    }
+
+}
