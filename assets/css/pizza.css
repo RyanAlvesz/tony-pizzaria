@@ -17,7 +17,6 @@ header{
     height: 30vh;
     position: sticky;
     top: 0;
-    z-index: 1;
 }
 
 header button{
@@ -40,23 +39,22 @@ main{
     z-index: 2;
 }
 
-.pizza::before{
+main::before{
     content: '';
     display: block;
     position: absolute;
-    bottom: 99%;
-    width: calc(100% + 1.5rem * 2);
+    bottom: 100%;
+    right: 0;
+    width: 100%;
     height: 1.5rem;
     border-radius: 2rem 2rem 0 0;
     background-color: var(--branco);
-    right: -1.5rem;
 }
 
 .pizza{
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
-    position: relative;
     padding-top: 0.75rem;
 }
 
@@ -131,6 +129,12 @@ main{
     color: rgba(0, 0, 0, 0.60);
 }
 
+.container-comentarios{
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
 .container-comentario{
     background-color: var(--cinza-claro);
     border-radius: 0.5rem;
@@ -190,4 +194,126 @@ main{
 .comentario{
     font-size: 0.75rem;
     color: var(--cinza);
+}
+
+@media (min-width: 1200px) {
+
+    body{
+        font-family: var(--fonte-principal);
+        min-height: 100vh;
+        position: relative;
+        display: grid;
+        grid-template-columns: 55% 45%;
+    }
+    
+    header{
+        height: 100%;
+    }
+    
+    header button{
+       display: none;
+    }
+    
+    main{
+        display: grid;
+        grid-template-rows: auto 45vh;
+        justify-content: space-between;
+        padding: 10vh 3rem 0 0;
+    }
+    
+    main::before{
+        bottom: 0;
+        width: 3rem;
+        height: 100vh;
+        border-radius: 1.5rem 0 0 1.5rem;
+        left: -2.9375rem;
+    }
+    
+    .pizza-name{
+        font-size: 2.375rem;
+    }
+    
+    #like{
+        place-self: center end;
+    }
+    
+    .preco{
+        font-size: 1.7rem;
+    }
+    
+    .descricao-pizza{
+        font-size: 1.5rem;
+    }
+    
+    .estrelas{
+        gap: 0.5rem;
+    }
+    
+    .estrelas img{
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+    
+    .comentarios{
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .comentarios .title{
+        align-items: center;
+        gap: 0.75rem;
+    }
+    
+    .title img{
+        width: 2rem;
+        height: 2rem;
+    }
+    
+    .title h2{
+        font-size: 1.5rem;
+        padding-bottom: 0.1875rem;
+    }
+
+    .container-comentarios{
+        overflow-y: scroll;
+        overflow-x: visible;
+        border-radius: 0.5rem;
+    }
+    
+    .container-comentario{
+        padding: 1rem;
+        gap: 0.75rem;
+    }
+
+    .pessoa{
+        gap: 0.75rem;
+    }
+
+    .pessoa img{
+        width: 4rem;
+        height: 4rem;
+    }
+    
+    .nome-pessoa{
+        font-size: 1.25rem;
+    }
+    
+    .data{
+        font-size: 1rem;
+    }
+    
+    .container-comentario .estrelas img{
+        width: 1.75rem;
+        height: 1.75rem;
+    }
+    
+    .avaliacao{
+        font-size: 1rem;
+    }
+    
+    .comentario{
+        font-size: 1.2rem;
+    }
+    
 }

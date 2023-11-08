@@ -150,7 +150,7 @@ main form fieldset div:not(:first-child)::after{
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        width: 65%;
+        width: 70%;
     }
     
     #imagem-usuario{
@@ -158,12 +158,23 @@ main form fieldset div:not(:first-child)::after{
         margin-bottom: 0;
     }
 
+    #imagem-usuario label img{
+        width: 2rem;
+        height: 2rem;
+    }
+
     main form fieldset div{
-        display: flex;
-        flex-direction: column;
         width: 100%;
-        gap: 0.3125rem;
-        position: relative;
+        gap: 0.5rem;
     }    
+
+    main form fieldset div label{
+        font-size: 1rem;
+    }
+
+    
+    main form fieldset div input{
+        font-size: 1rem;
+    }
 
 }

@@ -120,6 +120,12 @@ footer a{
 
     main{
         height: 100%;
+        justify-content: center;
+        gap: 5vh;
+    }
+
+    main form{
+        padding: 0;
     }
     
     .text{
@@ -131,15 +137,21 @@ footer a{
     .text h1{
         font-size: 2.25rem;
         width: 100%;
+        text-align: center;
     }
     
     .text p{
         font-size: 1.25rem;
+        text-align: justify;
     }
     
     .input img{
         width: 2rem;
         height: 2rem;
+    }
+
+    .input input, .input input::placeholder{
+        font-size: 1.2rem;
     }
 
     form button{
