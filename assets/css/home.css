@@ -53,6 +53,7 @@ header{
 .container-info-pessoal img{
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
 header .input{
@@ -203,26 +204,6 @@ main{
     font-size: 0.75rem;
     transition: ease-out 0.7s;
     border-radius: 0 8px;
-}
-
-.pizza-1{
-    background-image: url(../img/pizza-1.webp);
-}
-
-.pizza-2{
-    background-image: url(../img/pizza-2.webp);
-}
-
-.pizza-3{
-    background-image: url(../img/pizza-3.webp);
-}
-
-.pizza-4{
-    background-image: url(../img/pizza-4.webp);
-}
-
-.pizza-5{
-    background-image: url(../img/pizza-5.webp);
 }
 
 .nome-pizza-recomendada{
@@ -393,7 +374,7 @@ footer{
         "g1 g1"
         "g2 g3"
         "g4 g4";
-        gap: 1.5rem 2.5rem;
+        gap: 1.5rem 2rem;
         place-self: center center;
         padding: 0 calc(2.75rem - 6px) 1.5rem calc(2.75rem - 6px);
     }
@@ -425,7 +406,7 @@ footer{
     
     .container-categorias{
         gap: 0.5rem;
-        width: 100%;
+        width: calc(100vw - 2.375rem*2);
         padding: 0.375rem;
     }
     
@@ -434,6 +415,25 @@ footer{
         grid-template-columns: 1fr 1fr 1fr;
         width: 100%;
         padding: 0.375rem;
+        padding-right: 0.75rem;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        max-height: calc(15vh * 3 + 24px + 12px);
+    }
+
+    .container-pizzas::-webkit-scrollbar{
+        display: block;
+        width: 6px;
+    }
+
+    .container-pizzas::-webkit-scrollbar-thumb{
+        background-color: var(--laranja);
+        border-radius: 8px;
+    }
+    
+    .container-pizzas::-webkit-scrollbar-track{
+        background: var(--gradiente-laranja);
+        border-radius: 8px;
     }
     
     .pizza-favorita{

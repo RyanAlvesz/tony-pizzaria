@@ -139,7 +139,6 @@ main form fieldset div:not(:first-child)::after{
     
     main{
         width: 40vw;
-        height: 85vh;
         padding: 3.25rem 1.5rem;
         margin-top: 0;
         border-radius: 2rem;
@@ -175,6 +174,10 @@ main form fieldset div:not(:first-child)::after{
     
     main form fieldset div input{
         font-size: 1rem;
+    }
+
+    form button{
+        margin-top: 3.2rem;
     }
 
 }

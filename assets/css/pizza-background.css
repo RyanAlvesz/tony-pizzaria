@@ -37,6 +37,7 @@ body::after{
         left: 0;
         top: 0;
         bottom: 0;
+        filter: saturate(1.2);
     }
 
 }
