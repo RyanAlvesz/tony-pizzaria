@@ -1,5 +1,9 @@
 'use strict'
 
+import { cadastrarUsuario } from './info-login.js'
+
+let fotoPerfil
+
 const botao = document.getElementById('criar-conta')
 const input = document.getElementById('foto-perfil')
 
@@ -15,14 +19,19 @@ botao.addEventListener('click', () => {
         
         if(password.value == passwordConfirmation.value){
             
-            localStorage.setItem('nome', nome.value)
-            localStorage.setItem('email', email.value)
-            localStorage.setItem('senha', password.value)
-            localStorage.setItem('telephone', telephone.value)
-            
-            if(!localStorage.getItem('imagem')){
-                localStorage.setItem('imagem', '../img/icons/User.svg')
+            if(!fotoPerfil){
+                fotoPerfil = false
             }
+
+            const novoUsuario = {
+                nome: `${nome.value}`,
+                email: `${email.value}`,
+                senha: `${password.value}`,
+                telefone: `${telephone.value}`,
+                fotoPerfil: `${fotoPerfil}`
+            }
+
+            cadastrarUsuario(novoUsuario)
 
             nome.value = ''
             email.value = ''
@@ -51,8 +60,8 @@ input.addEventListener('change', () => {
         reader.addEventListener('load', (e) => {
             const readerTarget = e.target
             const imagem = document.getElementById('imagem-usuario')
-            localStorage.setItem('imagem', readerTarget.result)
-            imagem.style.backgroundImage = `url(${localStorage.getItem('imagem')})`
+            fotoPerfil = readerTarget.result
+            imagem.style.backgroundImage = `url(${fotoPerfil})`
             imagem.removeChild(imagem.children[0])
         })
     

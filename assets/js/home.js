@@ -345,13 +345,6 @@ const montarUsuario = () => {
 
     const foto = document.getElementById('foto-usuario')
     const nome = document.getElementById('nome-usuario')
-    
-    if(!nomeUsuario && !imagem){
-        nomeUsuario = 'Celso'
-        imagem = '../img/celso.webp'
-        localStorage.setItem('nome', nomeUsuario)
-        localStorage.setItem('imagem', imagem)
-    }
 
     foto.src = imagem
     foto.alt = nome

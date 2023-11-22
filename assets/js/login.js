@@ -1,32 +1,33 @@
 'use strict'
 
+import { listarUsuarios } from './info-login.js'
+
 const botaoLogin = document.getElementById('botao')
 const login = localStorage.getItem('login')
 
-const verificarLogin = () => {
-
+const verificarLogin = async() => {
+    
     let email = document.getElementById('email').value
     let senha = document.getElementById('senha').value
+    let validacaoEmail, validacaoSenha
 
-    let validacaoEmail = localStorage.getItem('email') 
-    let validacaoSenha = localStorage.getItem('senha')
-    
-    if(!validacaoEmail && !validacaoSenha){
-        validacaoEmail = 'celso@senai.com'
-        validacaoSenha = 'java'
-        localStorage.setItem('email', validacaoEmail)
-        localStorage.setItem('senha', validacaoSenha)
-    }
-    
-    if(email && senha){
-        if(email == validacaoEmail && senha == validacaoSenha){
-            localStorage.setItem('login', 'true')
-            window.location.href = './home.html'
+    const usuarios = await listarUsuarios()
+
+    usuarios.forEach(usuario => {
+        if(email == usuario.email && senha == usuario.senha){
+            validacaoEmail = usuario.email
+            validacaoSenha = usuario.senha
         }
-        else
-        alert('Email e/ou senha incorreto(s)')
+    })
+
+    if(email == validacaoEmail && senha == validacaoSenha){
+        localStorage.setItem('login', 'true')
+        window.location.href = './home.html'
     }
-    
+
+    else
+    alert('Email e/ou senha incorreto(s)')
+
 }
 
 botaoLogin.addEventListener('click', verificarLogin)
@@ -41,3 +42,5 @@ window.addEventListener('load', () => {
     }
 
 })
+
+console.log(await listarUsuarios())
