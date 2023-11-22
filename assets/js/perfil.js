@@ -1,9 +1,5 @@
 'use strict'
 
-const imagem = localStorage.getItem('imagem')
-const nome = localStorage.getItem('nome')
-const emailCadastrado = localStorage.getItem('email')
-const telefoneCadastrado = localStorage.getItem('telephone')
 const icon = document.getElementById('imagem-usuario')
 const email = document.getElementById('email')
 const telefone = document.getElementById('telefone')

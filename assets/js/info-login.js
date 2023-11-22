@@ -30,7 +30,6 @@ const cadastrarUsuario = async(usuario) => {
     }
     const response = await fetch(url, options)
 
-    console.log(response.ok)
     return response.ok
 
 }

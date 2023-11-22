@@ -17,6 +17,7 @@ const verificarLogin = async() => {
         if(email == usuario.email && senha == usuario.senha){
             validacaoEmail = usuario.email
             validacaoSenha = usuario.senha
+            localStorage('usuarioID', usuario.id)
         }
     })
 
@@ -36,11 +37,8 @@ window.addEventListener('load', () => {
 
     if(login == 'true'){
 
-        console.log('opa')
         window.location.href = './home.html'
 
     }
 
 })
-
-console.log(await listarUsuarios())

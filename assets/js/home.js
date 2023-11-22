@@ -1,7 +1,5 @@
 'use strict'
 
-const bebidas = document.getElementById('bebidas')
-
 const categorias = [
     
     {
@@ -337,6 +335,8 @@ const selecionarPizza = () => {
     }
     
 }
+
+
 
 const montarUsuario = () => {
     
