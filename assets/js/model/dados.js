@@ -10,7 +10,7 @@ var usuarios = {
             endereco: [
                 {
                     logradouro: 'Rua Bonita',
-                    estado: 'Barueri',
+                    cidade: 'Barueri',
                     uf: 'SP'
                 }
             ]
@@ -25,7 +25,7 @@ var usuarios = {
             endereco: [
                 {
                     logradouro: 'Rua Bonita',
-                    estado: 'Barueri',
+                    cidade: 'Barueri',
                     uf: 'SP'
                 }
             ]
@@ -40,7 +40,7 @@ var usuarios = {
             endereco: [
                 {
                     logradouro: 'Rua Bonita',
-                    estado: 'Itapevi',
+                    cidade: 'Itapevi',
                     uf: 'SP'
                 }
             ]
@@ -55,8 +55,8 @@ var usuarios = {
             endereco: [
                 {
                     logradouro: 'Estrada das Nações',
-                    estado: 'SP',
-                    uf: 'Barueri'
+                    cidade: 'Barueri',
+                    uf: 'SP'
                 }
             ]
         }

@@ -19,8 +19,8 @@ const montarPerfil = () => {
     nomeUsuario.textContent = usuario.nome
     telefone.textContent = usuario.telefone
     email.textContent = usuario.email
-    cidade.textContent = `${usuario.endereco[0].estado} - ${usuario.endereco[0].uf}`
-    localizacao.textContent = `${usuario.endereco[0].logradouro}, ${usuario.endereco[0].estado} - ${usuario.endereco[0].uf}`
+    cidade.textContent = `${usuario.endereco[0].cidade} - ${usuario.endereco[0].uf}`
+    localizacao.textContent = `${usuario.endereco[0].logradouro}, ${usuario.endereco[0].cidade} - ${usuario.endereco[0].uf}`
 
 }
 
