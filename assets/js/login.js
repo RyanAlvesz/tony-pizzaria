@@ -1,6 +1,6 @@
 'use strict'
 
-import { listarUsuarios } from './info-login.js'
+import { listarUsuarios } from './funcoes-api.js'
 
 const botaoLogin = document.getElementById('botao')
 const login = localStorage.getItem('login')
@@ -13,11 +13,11 @@ const verificarLogin = async() => {
 
     const usuarios = await listarUsuarios()
 
-    usuarios.forEach(usuario => {
+    usuarios.usuarios.forEach(usuario => {
         if(email == usuario.email && senha == usuario.senha){
             validacaoEmail = usuario.email
             validacaoSenha = usuario.senha
-            localStorage('usuarioID', usuario.id)
+            localStorage.setItem('usuarioID', usuario.id)   
         }
     })
 

@@ -1,51 +1,25 @@
 'use strict'
 
-const imagemPizza = localStorage.getItem('imagemPizza')
-const nomePizza = localStorage.getItem('nomePizza')
-const precoPizza = localStorage.getItem('precoPizza')
+import { infoPizza, comentarios } from './funcoes-api.js'
+const pizzaID = localStorage.getItem('pizzaID')
+const comentariosArray = await comentarios(pizzaID)
+const pizza = await infoPizza(pizzaID)
 const like = document.getElementById('like')
-
-const comentarios = [
-
-    {
-        nome: 'Gabriela Fernandes',
-        foto: '../img/gabriela.webp',
-        data: '08/08/2023',
-        estrelas: 3,
-        avaliacao: 'Pizza muito boa!',
-        comentario: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.',
-    },
-    {
-        nome: 'Ryan Alves',
-        foto: '../img/ryan.webp',
-        data: '04/08/2023',
-        estrelas: 5,
-        avaliacao: 'Essa pizza é demais, recomendo.',
-        comentario: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.',
-    },
-    {
-        nome: 'Celso Furtado',
-        foto: '../img/celso.webp',
-        data: '13/07/2023',
-        estrelas: 1,
-        avaliacao: 'Pizza chegou fria!',
-        comentario: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.',
-    }
-
-]
 
 const criarImagem = () => {
     
     const header = document.getElementById('header')
-    header.style.backgroundImage = `url(${imagemPizza})`
+    header.style.backgroundImage = `url(../img${pizza.imagem})`
 
-    document.getElementsByTagName('title')[0].innerText = nomePizza
+    document.getElementsByTagName('title')[0].innerText = pizza.nome
 
     const nome = document.getElementById('pizza-name')
     const preco = document.getElementById('preco')
+    const descricao = document.getElementById('descricao')
 
-    nome.textContent = nomePizza
-    preco.textContent = precoPizza
+    nome.textContent = pizza.nome
+    preco.textContent = pizza.preco
+    descricao.textContent = pizza.descricao
 
 }
 
@@ -89,16 +63,16 @@ const gerarComentarios = (comentario) => {
     containerComentario.classList.add('container-comentario')
     containerSuperior.classList.add('container-superior')
     avaliacao.classList.add('avaliacao')
-    avaliacao.textContent = comentario.avaliacao
+    avaliacao.textContent = comentario.titulo
     textoComentario.classList.add('comentario')
     textoComentario.textContent = comentario.comentario
     pessoa.classList.add('pessoa')
     estrelas.classList.add('estrelas')
-    img.src = comentario.foto
-    img.alt = comentario.nome
+    img.src = `../${comentario.fotoUsuario}`
+    img.alt = `../${comentario.nomeUsuario}`
     infoPessoa.classList.add('info-pessoa')
     nomePessoa.classList.add('nome-pessoa')
-    nomePessoa.textContent = comentario.nome
+    nomePessoa.textContent = comentario.nomeUsuario
     data.classList.add('data')
     data.textContent = comentario.data
 
@@ -114,7 +88,7 @@ const gerarComentarios = (comentario) => {
 }
 
 like.addEventListener('click', darLike)
-window.addEventListener('load', criarImagem)
-window.addEventListener('load', comentarios.forEach(comentario => {
+window.addEventListener('load', criarImagem())
+window.addEventListener('load', comentariosArray.comentarios.forEach(comentario => {
     gerarComentarios(comentario)
 }))

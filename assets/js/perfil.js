@@ -4,20 +4,23 @@ const icon = document.getElementById('imagem-usuario')
 const email = document.getElementById('email')
 const telefone = document.getElementById('telefone')
 const nomeUsuario = document.getElementById('nome')
+const cidade = document.getElementById('cidade')
+const localizacao = document.getElementById('localizacao')
 const input = document.getElementById('foto-perfil')
 const botaoSair = document.getElementById('sair')
 
+import { infoUsuario } from './funcoes-api.js'
+const usarioID = localStorage.getItem('usuarioID')
+const usuario = await infoUsuario(usarioID) 
 
 const montarPerfil = () => {
 
-    icon.style.backgroundImage = `url(${imagem})`
-    nomeUsuario.textContent = nome
-
-    if(telefoneCadastrado){
-        telefone.textContent = telefoneCadastrado
-    }
-    
-    email.textContent = emailCadastrado
+    icon.style.backgroundImage = `url(..${usuario.foto})`
+    nomeUsuario.textContent = usuario.nome
+    telefone.textContent = usuario.telefone
+    email.textContent = usuario.email
+    cidade.textContent = `${usuario.endereco[0].estado} - ${usuario.endereco[0].uf}`
+    localizacao.textContent = `${usuario.endereco[0].logradouro}, ${usuario.endereco[0].estado} - ${usuario.endereco[0].uf}`
 
 }
 
@@ -46,4 +49,4 @@ botaoSair.addEventListener('click', () => {
     localStorage.clear()
 })
 
-window.addEventListener('load', montarPerfil)
+window.addEventListener('load', montarPerfil())
