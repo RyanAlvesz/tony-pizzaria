@@ -19,7 +19,7 @@ var usuarios = {
             id: 2,
             nome: 'Gabriela',
             email: 'gabriela@gmail.com',
-            senha: '1234',
+            senha: 'bcd0808',
             fotoPerfil: '/img/gabriela.webp',
             telefone: '11 972870187',
             endereco: [
@@ -48,7 +48,7 @@ var usuarios = {
         {
             id: 4,
             nome: 'Marcel Teixeira',
-            email: 'marcel@email.com',
+            email: 'marcel@gmail.com',
             senha: 'javascript',
             fotoPerfil: '/img/pizza-2.webp',
             telefone: '11 987765443',

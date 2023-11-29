@@ -54,7 +54,7 @@ const getInfoUsuario = (idUsuario) => {
                 usuario.endereco = [
                     {    
                         logradouro: endereco.logradouro,
-                        estado: endereco.estado,
+                        cidade: endereco.cidade,
                         uf: endereco.uf
                     }
                 ]
