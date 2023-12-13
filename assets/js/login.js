@@ -33,12 +33,12 @@ const verificarLogin = async() => {
 
 botaoLogin.addEventListener('click', verificarLogin)
 
-window.addEventListener('load', () => {
+// window.addEventListener('load', () => {
 
-    if(login == 'true'){
+//     if(login == 'true'){
 
-        window.location.href = './home.html'
+//         window.location.href = './home.html'
 
-    }
+//     }
 
-})
+// })
